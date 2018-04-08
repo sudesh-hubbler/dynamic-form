@@ -1,0 +1,52 @@
+[
+  {
+    "fieldName" : "Name",
+    "type" : "text"
+  },
+  {
+      "fieldName" : "Age",
+      "type" : "number"
+    },
+    {
+      "fieldName" : "Fav Number",
+      "type" : "number"
+    },
+    {
+      "fieldName" : "Department",
+      "type" : "multiSelect",
+      "value": [ "CSE", "ECE", "CIVIL", "MECH", "EEE", "ISE" ]
+    },
+    {
+      "fieldName" : "fav",
+      "type" : "dropdown",
+      "value" : [ "yellow", "red", "BLUE" ]
+    },
+    {
+      "fieldName": "DOB",
+      "type":"date"
+    },
+    {
+    "fieldName" : "gender",
+    "type" : "dropdown",
+    "value" : [ "Male", "Female", "Other" ]
+  },
+    {
+      "fieldName" : "Location",
+      "type" : "dropdown",
+      "value" : [ "Kormanagala", "Indiranagar", "Brigade Road" ]
+    },
+    {
+    "fieldName" : "skills",
+    "type" : "paragraph"
+  }, {
+    "fieldName" : "Email",
+    "required" : true,
+    "type" : "email"
+  }, {
+    "fieldName" : "education",
+    "type" : "paragraph"
+  }, {
+    "fieldName" : "Remarks",
+    "type" : "paragraph"
+  }]
+

@@ -1,0 +1,7 @@
+{
+  "fieldName":"Gender",
+  "value":"None",
+  "type":"dropdown",
+  "required":true,
+  "options": ["None","Male", "Female"]
+}

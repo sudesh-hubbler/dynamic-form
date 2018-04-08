@@ -117,14 +117,15 @@ public class FormSelectionActivity extends AppCompatActivity {
 
             try {
                 newFormObject = new JSONObject(newFormData);
+                if(updatedIndexPos != -1)
+                    addJsonObjToFormRecycler(newFormObject,updatedIndexPos);
+                else
+                    addJsonObjToFormRecycler(newFormObject,-1);
             } catch (JSONException e) {
                 e.printStackTrace();
             }
 
             Log.i(TAG, "onActivityResult: New form object "+newFormData);
-            if (didViewUpdate) {
-                mReadJsonData("hubnewJson");
-            }
         }
 
     }
@@ -182,6 +183,22 @@ public class FormSelectionActivity extends AppCompatActivity {
             e.printStackTrace();
         }
         return jsonArray_fieldData;
+    }
+
+    private void addJsonObjToFormRecycler(JSONObject formObject, int positionToChange) {
+
+        if(formsRecyclerView == null)
+            return;
+        if(positionToChange != -1)
+        {
+            valuesInField.formsList.set(positionToChange,formObject);
+        }
+        else
+        {
+            valuesInField.formsList.add(formObject);
+            positionToChange = valuesInField.getItemCount() -1;
+        }
+        valuesInField.notifyItemChanged(positionToChange);
     }
 
     private void addFormsToRecyclerView(JSONArray mResponse) {
